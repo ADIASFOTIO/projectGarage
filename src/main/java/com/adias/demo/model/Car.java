@@ -1,9 +1,6 @@
 package com.adias.demo.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -12,17 +9,24 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-
+@Table(name = "car")
 public class Car {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
-    private Integer id;
+    private Long id;
     private String model;
     private String brand;
     private int year;
     private StringBuilder registerNumber;
+    @Enumerated(EnumType.STRING)
     private Color color;
     private String photo;
+    @ManyToOne
+    @JoinColumn(name = "id_ownercar")
+    private OwnerCar ownerCar;
+    @ManyToOne
+    @JoinColumn(name = "id_userr")
+    private Userr userr;
 
 }
