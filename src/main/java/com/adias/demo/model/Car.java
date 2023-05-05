@@ -1,10 +1,8 @@
 package com.adias.demo.model;
-
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -28,5 +26,9 @@ public class Car {
     @ManyToOne
     @JoinColumn(name = "id_userr")
     private Userr userr;
+    public Userr getUserr() {
+        return userr;
+    }
+
 
 }

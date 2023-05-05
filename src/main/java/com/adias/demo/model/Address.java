@@ -1,5 +1,4 @@
 package com.adias.demo.model;
-
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -14,8 +13,8 @@ public class Address {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    private String adresse1;
-    private String adresse2;
+    private String address1;
+    private String address2;
     private String cty;
     private String cap;
     private String country;
