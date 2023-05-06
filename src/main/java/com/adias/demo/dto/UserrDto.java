@@ -14,6 +14,7 @@ public class UserrDto {
     private String tel;
     private Instant dateOfBurn;
     private String photo;
+    private String password;
     private AddressDto addressDto;
     private List<RoleDto> roleDtos;
     private List<CarDto> carDtos;
@@ -52,6 +53,7 @@ public class UserrDto {
         userr.setTel(dto.getTel());
         userr.setDateOfBurn(dto.getDateOfBurn());
         userr.setPhoto(dto.getPhoto());
+        userr.setPassword(dto.getPassword());
         userr.setAddress(AddressDto.toEntity(dto.getAddressDto()));
         return userr;
     }

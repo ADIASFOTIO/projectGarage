@@ -21,6 +21,7 @@ public class Userr {
     private String tel;
     private Instant dateOfBurn;
     private String photo;
+    private String password;
     @ManyToOne
     @JoinColumn(name = "id_address")
     private Address address;
