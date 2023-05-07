@@ -9,7 +9,7 @@ public class CarDto {
     private String model;
     private String brand;
     private int year;
-    private StringBuilder registerNumber;
+    private String registerNumber;
     private Color color;
     private String photo;
     private OwnerCarDto ownerCarDto;
@@ -33,7 +33,7 @@ public class CarDto {
                 .build();
     }
 
-    public static Car fromEntity(CarDto carDto) {
+    public static Car toEntity(CarDto carDto) {
         if (carDto == null) {
             return null;
             //TODO THROW THE EXCEPTION

@@ -16,7 +16,7 @@ public class Car {
     private String model;
     private String brand;
     private int year;
-    private StringBuilder registerNumber;
+    private String registerNumber;
     @Enumerated(EnumType.STRING)
     private Color color;
     private String photo;
