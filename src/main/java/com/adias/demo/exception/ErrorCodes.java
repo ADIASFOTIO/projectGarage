@@ -1,6 +1,6 @@
 package com.adias.demo.exception;
 
-public enum Error {
+public enum ErrorCodes {
     //TODO COMPLETE THE RST OF ERROR
     ADDRESS_NOT_FOUND(1000),
     CAR_NOT_FOUND(2000),
@@ -9,10 +9,12 @@ public enum Error {
     USERR_NOT_FOUND(5000),
     ;
     private int code;
-    Error(int code){
+    ErrorCodes(int code){
+
         this.code = code;
     }
     public int getCode() {
+
         return code;
     }
 }

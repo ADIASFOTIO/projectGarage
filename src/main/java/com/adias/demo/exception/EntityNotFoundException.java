@@ -4,19 +4,19 @@ import lombok.Getter;
 
 public class EntityNotFoundException extends RuntimeException{
     @Getter
-    private Error error;
+    private ErrorCodes errorCodes;
     public EntityNotFoundException(String message){
         super(message);
     }
     public EntityNotFoundException(String message, Throwable cause){
         super(message, cause);
     }
-    public EntityNotFoundException(String message, Throwable cause, Error error){
+    public EntityNotFoundException(String message, Throwable cause, ErrorCodes errorCodes){
         super(message, cause);
-        this.error = error;
+        this.errorCodes = errorCodes;
     }
-    public EntityNotFoundException(String message, Error error){
+    public EntityNotFoundException(String message, ErrorCodes errorCodes){
         super(message);
-        this.error = error;
+        this.errorCodes = errorCodes;
     }
 }

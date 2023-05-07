@@ -6,7 +6,7 @@ import java.util.List;
 
 public class InvalidEntityException extends RuntimeException{
     @Getter
-    private Error error;
+    private ErrorCodes errorCodes;
     @Getter
     private List<String> errors;
     public InvalidEntityException(String message){
@@ -15,13 +15,13 @@ public class InvalidEntityException extends RuntimeException{
     public InvalidEntityException(String message, Throwable cause){
         super(message, cause);
     }
-    public InvalidEntityException(String message, Throwable cause, Error error){
+    public InvalidEntityException(String message, Throwable cause, ErrorCodes errorCodes){
         super(message, cause);
-        this.error = error;
+        this.errorCodes = errorCodes;
     }
-    public InvalidEntityException(String message, Error error, List<String> errors){
+    public InvalidEntityException(String message, ErrorCodes errorCodes, List<String> errors){
         super(message);
-        this.error = error;
+        this.errorCodes = errorCodes;
         this.errors = errors;
     }
 }

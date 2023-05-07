@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 public class Role {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
     private String roleName;
     @ManyToOne
     @JoinColumn(name = "id_userr")
