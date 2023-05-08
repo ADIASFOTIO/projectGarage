@@ -21,8 +21,8 @@ public class Car {
     private Color color;
     private String photo;
     @ManyToOne
-    @JoinColumn(name = "id_ownercar")
-    private OwnerCar ownerCar;
+    @JoinColumn(name = "id_client")
+    private Client client;
     @ManyToOne
     @JoinColumn(name = "id_userr")
     private Userr userr;

@@ -12,7 +12,7 @@ public class CarDto {
     private String registerNumber;
     private Color color;
     private String photo;
-    private OwnerCarDto ownerCarDto;
+    private ClientDto clientDto;
 
     private UserrDto userrDto;
 
@@ -27,7 +27,7 @@ public class CarDto {
                 .year(car.getYear())
                 .registerNumber(car.getRegisterNumber())
                 .color(car.getColor())
-                .ownerCarDto(OwnerCarDto.fromEntity(car.getOwnerCar()))
+                .clientDto(ClientDto.fromEntity(car.getClient()))
                 .photo(car.getPhoto())
                 .userrDto(UserrDto.fromEntity(car.getUserr()))
                 .build();
@@ -39,7 +39,7 @@ public class CarDto {
             //TODO THROW THE EXCEPTION
         }
         Car car = new Car();
-        car.setOwnerCar(OwnerCarDto.toEntity(carDto.getOwnerCarDto()));
+        car.setClient(ClientDto.toEntity(carDto.getClientDto()));
         car.setColor(carDto.getColor());
         car.setBrand(carDto.getBrand());
         car.setModel(carDto.getModel());

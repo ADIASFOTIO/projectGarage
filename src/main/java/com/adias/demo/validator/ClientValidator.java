@@ -1,34 +1,34 @@
 package com.adias.demo.validator;
 import com.adias.demo.dto.CarDto;
-import com.adias.demo.dto.OwnerCarDto;
+import com.adias.demo.dto.ClientDto;
 import org.springframework.util.StringUtils;
 import java.util.ArrayList;
 import java.util.List;
 
-public class OwnerCarValidator {
-    public static List<String> validate(OwnerCarDto ownerCarDto) {
+public class ClientValidator {
+    public static List<String> validate(ClientDto clientDto) {
         List<String> errors = new ArrayList<>();
-        if ((ownerCarDto == null) || !StringUtils.hasLength(ownerCarDto.getFirstName())) {
+        if ((clientDto == null) || !StringUtils.hasLength(clientDto.getFirstName())) {
             errors.add("compila il campo Firstname");
         }
-        if ((ownerCarDto == null) || !StringUtils.hasLength(ownerCarDto.getLastName())) {
+        if ((clientDto == null) || !StringUtils.hasLength(clientDto.getLastName())) {
             errors.add("compila il campo Lastname");
         }
-        if ((ownerCarDto == null) || !StringUtils.hasLength(ownerCarDto.getMail())) {
+        if ((clientDto == null) || !StringUtils.hasLength(clientDto.getMail())) {
             errors.add("compila il campo mail");
         }
-        if ((ownerCarDto == null) || !StringUtils.hasLength(ownerCarDto.getTel())) {
+        if ((clientDto == null) || !StringUtils.hasLength(clientDto.getTel())) {
             errors.add("compila il campo tel");
         }
-        if (ownerCarDto.getAddressDto() == null){
+        if (clientDto.getAddressDto() == null){
             errors.add("compila il campo Address");
         }else {
-            AddressValidator.validate(ownerCarDto.getAddressDto());
+            AddressValidator.validate(clientDto.getAddressDto());
         }
-        if (ownerCarDto.getCarDtos() == null){
+        if (clientDto.getCarDtos() == null){
             errors.add("compila il campo macchina");
         }else {
-            for (CarDto carDto : ownerCarDto.getCarDtos()){
+            for (CarDto carDto : clientDto.getCarDtos()){
              errors.addAll(CarValidator.validate(carDto));
             }
         }

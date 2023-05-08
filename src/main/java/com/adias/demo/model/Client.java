@@ -9,9 +9,9 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "ownercar")
+@Table(name = "client")
 
-public class OwnerCar {
+public class Client {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
@@ -23,7 +23,7 @@ public class OwnerCar {
     @ManyToOne
     @JoinColumn(name = "id_address")
     private Address address;
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "ownerCar")
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "client")
     @JsonIgnore
     private List<Car> cars;
 

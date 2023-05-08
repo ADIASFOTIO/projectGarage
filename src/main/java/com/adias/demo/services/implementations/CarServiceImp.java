@@ -19,11 +19,8 @@ import java.util.stream.Collectors;
 @Service
 @Slf4j
 public class CarServiceImp implements CarService {
-    private CarRepository carRepository;
     @Autowired
-    public CarServiceImp(CarRepository CarRepository){
-        this.carRepository = carRepository;
-    }
+    private CarRepository carRepository;
     @Override
     public CarDto save(CarDto dto) {
     // prima di registrare un car devo fare la validazione
