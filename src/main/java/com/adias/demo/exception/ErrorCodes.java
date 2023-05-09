@@ -10,7 +10,8 @@ public enum ErrorCodes {
     CLIENT_ALREADY_IN_USE(3002),
     ROLE_NOT_FOUND(4000),
     USERR_NOT_FOUND(5000),
-    ;
+    USERR_NOT_VALID(3001);
+
     private int code;
     ErrorCodes(int code){
 
