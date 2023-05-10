@@ -23,8 +23,9 @@ public class ClientServiceImp implements ClientService {
     private CarRepository carRepository;
 
     @Autowired
-    public ClientServiceImp(ClientRepository clientRepository) {
+    public ClientServiceImp(ClientRepository clientRepository, CarRepository carRepository) {
         this.clientRepository = clientRepository;
+        this.carRepository = carRepository;
     }
 
     @Override
