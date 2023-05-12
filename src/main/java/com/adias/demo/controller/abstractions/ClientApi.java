@@ -1,5 +1,4 @@
 package com.adias.demo.controller.abstractions;
-import com.adias.demo.dto.CarDto;
 import com.adias.demo.dto.ClientDto;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -9,7 +8,7 @@ import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import static com.adias.demo.utils.Constants.URL_GENERAL;
-@Api(URL_GENERAL + "/client")
+@Api(URL_GENERAL + "/clients")
 public interface ClientApi {
     @PostMapping(value = URL_GENERAL + "/clients/create", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     @ApiOperation(value = "save a client", notes = "the method allows o modify a client",response = ClientDto.class)
