@@ -4,6 +4,7 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
+import org.springframework.context.annotation.Bean;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
@@ -39,7 +40,7 @@ public interface CarApi {
     } )
     List<CarDto> findAll();
     @DeleteMapping(value = URL_GENERAL+"/car/delete/{id_car}")
-    @ApiOperation(value = "delete a car", notes = "the method allows to delete a car with its ID ",response = CarDto.class)
+    @ApiOperation(value = "delete a car", notes = "the method allows to delete a car with its ID ")
     @ApiResponses(value ={
             @ApiResponse(code = 200, message = "the car has been deleted"),
     } )
