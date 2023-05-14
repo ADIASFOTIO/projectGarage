@@ -1,8 +1,6 @@
 package com.adias.demo.validator;
-
 import com.adias.demo.dto.CarDto;
 import org.springframework.util.StringUtils;
-
 import java.util.ArrayList;
 import java.util.List;
 

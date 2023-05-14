@@ -66,7 +66,7 @@ public class UserrServiceImp implements UserrService {
 
     @Override
     public UserrDto findByMail(String mail) {
-        return userrRepository.findUserrByMail(mail)
+        return userrRepository.findByMail(mail)
                 .map(UserrDto::fromEntity)
                 .orElseThrow(() -> new EntityNotFoundException(
                         "Nessun userr con questo mail = " + mail + " c'è nella BD",

@@ -8,6 +8,5 @@ import java.util.Optional;
 @Repository
 public interface UserrRepository extends GenericRepository<Userr,Integer> {
     // JPQL query
-    @Query(value = "select u from Userr u where u.mail = :mail")
-    Optional<Userr> findUserrByMail(@Param("mail") String mail);
+    Optional<Userr> findByMail(String mail);
 }

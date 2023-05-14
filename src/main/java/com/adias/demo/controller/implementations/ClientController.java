@@ -2,6 +2,7 @@ package com.adias.demo.controller.implementations;
 import com.adias.demo.controller.abstractions.ClientApi;
 import com.adias.demo.dto.ClientDto;
 import com.adias.demo.services.abstractions.ClientService;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -12,19 +13,20 @@ public class ClientController implements ClientApi {
         this.clientService = clientService;
     }
     @Override
-    public ClientDto save(ClientDto dto) {
-        return clientService.save(dto);
+    public ResponseEntity<ClientDto> save(ClientDto dto) {
+        return ResponseEntity.ok(clientService.save(dto));
     }
     @Override
-    public ClientDto findById(Integer id) {
-        return clientService.findById(id);
+    public ResponseEntity<ClientDto> findById(Integer id) {
+        return ResponseEntity.ok(clientService.findById(id));
     }
     @Override
-    public List<ClientDto> findAll() {
-        return clientService.findAll();
+    public ResponseEntity<List<ClientDto>> findAll() {
+        return ResponseEntity.ok(clientService.findAll());
     }
     @Override
-    public void delete(Integer id) {
+    public ResponseEntity delete(Integer id) {
         clientService.delete(id);
+        return ResponseEntity.ok().build();
     }
 }
