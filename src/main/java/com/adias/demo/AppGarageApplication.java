@@ -5,6 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class AppGarageApplication {
 
 	public static void main(String[] args) {
+
 		SpringApplication.run(AppGarageApplication.class, args);
 	}
 
